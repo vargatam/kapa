@@ -1,0 +1,82 @@
+<style type="text/css">
+<!--
+.text {
+	font-family: verdana;
+	font-size: 12px;
+	color: #000;
+	width: 100%;
+	padding: 10px;
+	line-height: 130%;
+}
+.tabulka {
+	width: 300px;
+	clear: left;
+	position: relative;
+	margin-top: -27px;
+	margin-left: 70px;
+}
+.tabulka1 {
+	width: 300px;
+	clear: left;
+	position: relative;
+	margin-top: -15px;
+	margin-left: 70px;
+}
+.nadpis {
+	font-family: verdana;
+	font-size: 14px;
+	color: #c30;
+	font-weight: bold;
+}
+-->
+</style>
+<div class="text">
+  <div class="nadpis">Kontakt</div>
+  <p>KAPA<br />
+  Sladov&aacute; 1<br />
+  821 05<br />
+  Bratislava 2</p>
+<p>tel. / fax:</p>
+<div class="tabulka">+ 421 2 44 454 550<br />
++ 421 2 20 744 545</div><br />
+mobil:
+<div class="tabulka1">+ 421 903 454 546<br />
++ 421 905 444 545<br />
++ 421 911 454 446
+</div>
+<p>&nbsp;</p>
+<p>Posla&#357; spr&aacute;vu</p>
+<p><br />
+</p>
+</div>
+<% form_for :email, :url => { :action => :send_message } do |form| %>
+
+  <p>
+    <label for ="email_sender_name">
+      Va&scaron;e meno<br />    </label>
+      <% form.text_field :sender_name %>
+  </p>
+  <p>V&aacute;&scaron; mail
+    <label for ="email_sender_address">
+      <br />
+      <%#*<input name="vas-mail" type="text" id="vas-mail" />%>
+            <% form.text_field :sender_address, :size => 40 %>
+    </label>
+  </p>
+    <p>Va&scaron;a spr&aacute;va</p>
+  <p>
+    <label for ="email_body">
+      <%#*<textarea name="poznamka" id="poznamka" cols="70" rows="5"></textarea>%>
+      <% form.text_area :body, :cols => 70, :rows => 5 %>
+    </label>
+  </p>
+  <%= submit_tag "Odoslat" , :class => "submit" %>
+<% end %>
+<!--
+  <p>
+    <label>
+      <input type="submit" name="odosli" id="odosli" value="Odoslat" />
+    </label>
+  </p>
+</form>
+-->

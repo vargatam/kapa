@@ -1,0 +1,25 @@
+<%= stylesheet_link_tag "styles" , :media => "all" %>
+
+<div  id="tabs">
+  <ul>
+    <li>
+      <%#*<a href="index.php?co=kontakt"><span>KONTAKT</span></a>%>
+      <%= link_to "<span>KONTAKT</span>" ,   :controller => 'kapa', :action => 'contact' %>
+    </li>
+
+    <li>
+      <%#*<a href="index.php?co=produkty"><span>PRODUKTY</span></a>%>
+      <%= link_to "<span>PRODUKTY</span>" ,   :controller => 'kapa', :action => 'index' %>
+    </li>
+
+    <li>
+      <%#*<a href="index.php?co=certifikaty"><span>CERTIFIKATY</span></a>%>
+      <%= link_to "<span>CERTIFIKÁTY</span>" ,   :controller => 'kapa', :action => 'certificates' %>
+    </li>
+
+    <li>
+      <%#*<a href="index.php?co=sluzby"><span>SLUZBY</span></a>%>
+      <%= link_to "<span>SLUZBY</span>" ,   :controller => 'kapa', :action => 'services' %>
+    </li>
+  </ul>
+</div>

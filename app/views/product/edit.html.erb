@@ -1,0 +1,36 @@
+<h1>Edit product </h1>
+
+<% form_for @product, :url => {:action => :update, :id => @product } do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :image_url %><br />
+    <%= f.text_field :image_url %>
+  </p>
+  <p>
+    <%= f.label :specs_url %><br />
+    <%= f.text_field :specs_url %>
+  </p>
+  <p>
+    <%= f.label :price %><br />
+    <%= f.text_field :price %>
+  </p>
+  <p>
+    <%= f.label :product_group_id %><br />
+    <%= f.text_field :product_group_id %>
+  </p>
+  <p>
+    <%= f.submit "Change" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', :action => :show, :id => @product %> |
+<%= link_to 'Back', :controller => :kapa, :action => :show, :id => @product.product_group %>

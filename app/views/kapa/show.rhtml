@@ -1,0 +1,34 @@
+<p>
+  <b>Name:</b>
+  <%=h @product_group.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @product_group.description %>
+</p>
+<%= link_to 'Edit', :action => :edit, :id => @product_group %>
+<%= link_to 'Back', :action => :index %>
+<br/>
+
+<div id="product-list" >
+   <h1>Produkty</h1>
+   <table cellpadding="5" cellspacing="0" >
+   <% for product in @product_group.products %>
+     <tr valign="top" class="<%= cycle('list-line-odd', 'list-line-even') %>" >
+       <td width="60%" >
+          <span class="list-name" > <%= link_to  h(product.name), :controller => :product, :action => 'show', :id => product %></span><br />
+          <%= h(truncate(product.description, 80)) %>
+       </td>
+       <td class="list-actions" >
+          <%= link_to 'Edit',:controller => :product, :action => 'edit', :id => product %><br/>
+          <%= link_to 'Destroy', { :controller => :product, :action => 'delete', :id => product },
+                                    :confirm => "Are you sure?" ,
+                                    :method => :post %>
+       </td>
+     </tr>
+   <% end %>
+   </table>
+</div>
+ |
+<%= link_to 'Add products', :controller => :product, :action => :new, :product_group => @product_group %>

@@ -1,0 +1,45 @@
+<!--
+<?php
+  $co=$_REQUEST['co'];
+  if (! isset($_REQUEST['co'])) $co="php/kapa-slideshow";
+?>
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1250" />
+    <title>Kapa</title>
+    <%= stylesheet_link_tag "kapa" , :media => "all" %>
+  </head>
+
+  <body  >
+    <div id="header"></div>
+    <div id="page">
+
+      <div class="menu">
+
+        <%= render( :partial => "menu" , :object => nil) %>
+        <!--
+        <?php
+                include('menu.php');
+        ?>
+        -->
+      </div>
+      <div class="menu2">
+<%#= render(:partial => "catalog" , :object => nil) %>
+        <div class="menu-text">KAPA Sladov� 1, 821 05 Bratislava 2, tel./fax: +421 2 44 454 550, +421 2 20 745 545, mobil: + 421 903 454 546, +421 905 444 545, + 421 911 454 446</div>
+        <% if flash[:notice] -%>
+          <div id="notice" ><%= flash[:notice] %></div>
+        <% end -%>
+      </div>
+      <!-- HUHA -->
+      <!--
+      <?php
+          include ($co.'.php');
+      ?>
+      -->
+      <%= yield :layout %>
+    </div>
+
+  </body>
+</html>

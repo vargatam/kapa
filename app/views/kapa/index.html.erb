@@ -1,0 +1,84 @@
+<!--
+<div id="product_group-list" >
+   <h1>Produkty</h1>
+   <table cellpadding="5" cellspacing="0" >
+   <% for product_group in @product_groups %>
+     <tr valign="top" class="<%= cycle('list-line-odd', 'list-line-even') %>" >
+       <td width="60%" >
+          <span class="list-name" > <%= link_to  h(product_group.name), :action => 'show', :id => product_group %></span><br />
+          <%= h(truncate(product_group.description, 80)) %>
+       </td>
+       <td class="list-actions" >
+          <%= link_to 'Edit', :action => 'edit', :id => product_group %><br/>
+          <%= link_to 'Destroy', { :action => 'delete', :id => product_group },
+                                    :confirm => "Are you sure?" ,
+                                    :method => :post %>
+       </td>
+     </tr>
+   <% end %>
+   </table>
+</div>
+-->
+
+<style type="text/css">
+.slideshow {
+	height: 215px;
+	width: 215px;
+	clear: right;
+	float: left;
+	margin-top: 30px;
+	margin-right: 30px;
+	margin-bottom: 30px;
+	margin-left: 70px;
+}
+.slideshow img { padding: 15px;	border: 3px solid #CC3300;	background-color: #FFCC33;
+}
+
+<!--
+#page {
+	background-color: #FFF;
+	width: 980px;
+	height: 600px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+}
+-->
+</style>
+
+<!-- include jQuery library
+<script type="text/javascript" src="src/jquery.min.js"></script>  -->
+
+<%= javascript_include_tag 'jquery.min.js' %>
+<!-- include Cycle plugin
+<script type="text/javascript" src="src/jquery.cycle.all.js"></script> -->
+
+<%= javascript_include_tag 'jquery.cycle.all.js' %>
+<!--  initialize the slideshow when the DOM is ready -->
+
+<script type="text/javascript">
+$(document).ready(function() {
+ $('.slideshow').cycle({
+		fx: 'all' // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+	});
+
+});
+</script>
+
+<div class ="page3">
+<div margin:auto>
+
+
+   <% for product_group in @product_groups do%>
+<div class ="slideshow">
+        <%  for product in product_group.products do%>
+  <p>
+        <%= link_to image_tag("produkty/#{product.image_url}", :size => "180x180"), :action => :show, :id => product_group %>
+  </p>
+        <% end %>
+</div>
+        <% end %>
+</div>
+</div>
+<br />
+<%= link_to 'New product group', :action => 'new' %>

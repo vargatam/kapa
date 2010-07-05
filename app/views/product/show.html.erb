@@ -1,0 +1,18 @@
+<p>
+  <b>Name:</b>
+  <%=h @product.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @product.description %>
+</p>
+
+<p>
+  <b>Product group name:</b>
+  <%=h @product.product_group.name %>
+</p>
+
+<%= link_to 'Edit', :action => :edit, :id => @product %>
+<%= link_to 'Back', :controller => :kapa, :action => :show, :id => @product.product_group %>
+<br/>
