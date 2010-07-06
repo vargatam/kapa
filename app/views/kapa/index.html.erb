@@ -65,20 +65,21 @@ $(document).ready(function() {
 });
 </script>
 
-<div class ="page3">
-<div margin:auto>
+<table class ="page3">
+<tr margin:auto>
 
 
    <% for product_group in @product_groups do%>
-<div class ="slideshow">
+<td class ="slideshow">
         <%  for product in product_group.products do%>
   <p>
         <%= link_to image_tag("produkty/#{product.image_url}", :size => "180x180"), :action => :show, :id => product_group %>
   </p>
         <% end %>
-</div>
+</td>
         <% end %>
-</div>
-</div>
-<br />
+</tr>
+</table>
+<div>
 <%= link_to 'New product group', :action => 'new' %>
+  </div>

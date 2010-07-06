@@ -7,7 +7,7 @@ body {
 	background-position: center top;
 }
 #page {
-	background-color: #FFF;
+	background-color: #FFCC33;
 	width: 980px;
 	font-weight: normal;
 	text-align: left;
@@ -58,4 +58,20 @@ body {
 	width: 100%;
 	font-weight: normal;
 	padding-left: 10px;
+}
+#side {
+  float: right;
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-bottom: 1em;
+  width: 20%;
+  background: #FFCC33;
+}
+#main {
+  float: left;
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-bottom: 1em;
+  width: 77%;
+  background: #FFCC33;
 }

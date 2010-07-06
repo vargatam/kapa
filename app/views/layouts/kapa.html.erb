@@ -38,7 +38,12 @@
           include ($co.'.php');
       ?>
       -->
+      <div id="main">
       <%= yield :layout %>
+      </div>
+      <div id="side">
+        <%= render(:partial => "cart" , :object => @cart) %>
+      </div>
     </div>
 
   </body>
